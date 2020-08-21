@@ -26,11 +26,11 @@ if(!empty($_POST['key'])&&!empty($_POST['string']))
   $a=0;
   while ($i <= $length-1)
   {
-    //konwersja tekstu na ASCII
+    //text to ASCII Conversion
     $precoded = Conv1($string[$i], $separator = NULL);
     while ($a <=7)
     {
-      //bramka XOR
+      //XOR Gate
         if( $key[$a]=="1" && $precoded[$a]=="1")
         {echo "1";}
         if( $key[$a]=="0" && $precoded[$a]=="0")
@@ -51,9 +51,9 @@ if(!empty($_POST['key'])&&!empty($_POST['string']))
 
      ?>
 <form method="post">
-  Klucz Szyfrowania (do 255) <input type="number" name="key"><br>
-  Tekst do Zaszyfrowania <input type="text" name="string"><br>
-<input type="submit" value="Wyślij!">
+  Key to cipher (0-255) <input type="number" name="key"><br>
+  Text to encrypt <input type="text" name="string"><br>
+<input type="submit" value="Send!">
 </form>
 <?php } ?>
   </body>
